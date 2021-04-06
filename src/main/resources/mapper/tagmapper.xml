@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "mybatis-3-mapper.dtd" >
+<mapper namespace="com.young.blog.dao.TagDao" >
+    <select id="getAllTag" resultType="com.young.blog.pojo.Tag">
+        select * from t_tag
+    </select>
+    <select id="getTagByName" resultType="com.young.blog.pojo.Tag">
+        select * from t_tag where name=#{name}
+    </select>
+    <insert id="saveTag" parameterType="com.young.blog.pojo.Tag">
+        insert into t_tag values(#{id},#{name})
+    </insert>
+    <delete id="deleteTag">
+        delete from t_tag where id = #{id}
+    </delete>
+    <update id="updateTag">
+        update t_tag SET name=#{name}
+        where id=#{id}
+    </update>
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "mybatis-3-mapper.dtd" >
+<mapper namespace="com.young.blog.dao.TypeDao" >
+    <select id="getAllType" resultType="com.young.blog.pojo.Type">
+        select * from t_type
+    </select>
+    <select id="getTypeByName" resultType="com.young.blog.pojo.Type">
+        select * from t_type where name=#{name}
+    </select>
+    <insert id="saveType" parameterType="com.young.blog.pojo.Type">
+        insert into t_type values(#{id},#{name})
+    </insert>
+    <delete id="deleteType">
+        delete from t_type where id = #{id}
+    </delete>
+    <update id="updateType">
+        update t_type SET name=#{name}
+        where id=#{id}
+    </update>
+</mapper>

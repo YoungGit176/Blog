@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "mybatis-3-mapper.dtd" >
+<mapper namespace="com.young.blog.dao.BlogAndTagDao" >
+    <select id="getAllBlogAndTag" resultType="com.young.blog.pojo.BlogAndTag">
+        select * from t_blog_tags
+    </select>
+    <insert id="saveBlogAndTag" parameterType="com.young.blog.pojo.Tag">
+        insert into t_blog_tags values(#{id},#{blog_id},#{tag_id})
+    </insert>
+    <delete id="deleteBlogAndTag">
+        delete from t_blog_tags where blog_id = #{id}
+    </delete>
+</mapper>
